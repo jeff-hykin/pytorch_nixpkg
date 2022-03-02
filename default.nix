@@ -89,9 +89,8 @@ in
                     phases = "installPhase";
 
                     installPhase = ''
-                        mkdir $out;
 
-                        cp -r $src/* $out/
+                        ln -s $src $out
 
                         ${installPhase}
                     '';
