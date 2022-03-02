@@ -22,7 +22,7 @@
       pytorch-repo = pkgs.fetchgit {
         url = "https://github.com/pytorch/pytorch.git";
         rev = "56b43f4fec1f76953f15a627694d4bba34588969";
-        sha256 = "1cx1r0qadx6c5jbvi9df64ssbdpb11vimysg227364rcbyhdhijv";
+        sha256 = "1zngfp0vmby80ambk9lims40mdzarpn8lfddjmsnyyai60wqpg8h";
         deepClone = true;
       };
     in pkgs.writeScriptBin "install-pytorch" ''
