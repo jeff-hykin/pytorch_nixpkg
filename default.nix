@@ -89,7 +89,7 @@ in
                     phases = "installPhase";
 
                     installPhase = ''
-
+                        mkdir -p $out
                         ln -s $src $out
 
                         ${installPhase}
