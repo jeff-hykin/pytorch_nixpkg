@@ -55,7 +55,6 @@ let
         magma         = pinnedNix.magma;
         cudatoolkit   = pinnedNix.cudatoolkit_11_1;
         cudnn         = pinnedNix.cudnn_cudatoolkit_11_1;
-        stdenv        = pinnedNix.stdenv;
     };
 # 
 # actual function being exported
