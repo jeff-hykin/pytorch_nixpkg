@@ -74,7 +74,7 @@ in
         let
             # push the cuda toolkit into the other tools
             argsWithOverrides = args // {
-                mpi   = args.openmpi.override {
+                openmpi = args.openmpi.override {
                     cudaSupport = true; 
                     cudatoolkit = args.cudatoolkit;
                 };
