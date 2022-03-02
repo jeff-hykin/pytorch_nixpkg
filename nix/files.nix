@@ -70,7 +70,8 @@ in
         zlib        ? defaults.zlib       ,
         cudatoolkit ? defaults.cudatoolkit,
         cudnn       ? defaults.cudnn      ,
-        magma       ? defaults.magma                
+        magma       ? defaults.magma      ,
+        ...
     }:
         let
             # push the cuda toolkit into the other tools
