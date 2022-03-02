@@ -55,6 +55,7 @@ let
         magma         = pinnedNix.magma;
         cudatoolkit   = pinnedNix.cudatoolkit_11_1;
         cudnn         = pinnedNix.cudnn_cudatoolkit_11_1;
+        stdenv        = pinnedNix.stdenv;
     };
 # 
 # actual function being exported
@@ -69,6 +70,7 @@ in
         cudatoolkit   ? defaults.cudatoolkit    ,
         cudnn         ? defaults.cudnn          ,
         magma         ? defaults.magma          ,
+        stdev         ? defaults.stdev          ,
         ...
     }:
         let
@@ -94,7 +96,7 @@ in
                         [ -z LD_LIBRARY_PATH ] && export LD_LIBRARY_PATH=""
                         export LD_LIBRARY_PATH="${argsWithOverrides.hdf5}:$LD_LIBRARY_PATH"
                         export LD_LIBRARY_PATH="${argsWithOverrides.openmpi}/lib:$LD_LIBRARY_PATH"
-                        export LD_LIBRARY_PATH="${argsWithOverrides.python38}/lib:$LD_LIBRARY_PATH"
+                        export LD_LIBRARY_PATH="${argsWithOverrides.python}/lib:$LD_LIBRARY_PATH"
                         export LD_LIBRARY_PATH="${argsWithOverrides.stdenv.cc.cc.lib}/lib:$LD_LIBRARY_PATH"
                         export LD_LIBRARY_PATH="${argsWithOverrides.zlib}/lib:$LD_LIBRARY_PATH"
 
