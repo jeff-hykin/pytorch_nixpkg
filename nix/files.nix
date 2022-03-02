@@ -70,7 +70,6 @@ in
         cudatoolkit   ? defaults.cudatoolkit    ,
         cudnn         ? defaults.cudnn          ,
         magma         ? defaults.magma          ,
-        stdev         ? defaults.stdev          ,
         ...
     }:
         let
