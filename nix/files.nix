@@ -55,8 +55,6 @@ let
         magma         = pinnedNix.magma;
         cudatoolkit   = pinnedNix.cudatoolkit_11_1;
         cudnn         = pinnedNix.cudnn_cudatoolkit_11_1;
-        writeText     = pinnedNix.writeText;
-        writeTextFile = pinnedNix.writeTextFile;
     };
 # 
 # actual function being exported
@@ -71,8 +69,6 @@ in
         cudatoolkit   ? defaults.cudatoolkit    ,
         cudnn         ? defaults.cudnn          ,
         magma         ? defaults.magma          ,
-        writeText     ? defaults.writeText      ,
-        writeTextFile ? defaults.writeTextFile  ,
         ...
     }:
         let
@@ -88,7 +84,7 @@ in
             };
         in
             {
-                base-env-vars = (argsWithOverrides.writeText
+                base-env-vars = (pinnedNix.writeText
                     ("base-env-vars")
                     (''
                         # Keep track of project directory
@@ -107,7 +103,7 @@ in
                     '')
                 );
 
-                base-pip-requirements = argsWithOverrides.writeTextFile {
+                base-pip-requirements = pinnedNix.writeTextFile {
                     name = "requirements.txt";
                     text = (builtins.readFile ./requirements.txt);
                 };
