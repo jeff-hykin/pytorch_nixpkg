@@ -74,6 +74,12 @@ in
         let
             # push the cuda toolkit into the other tools
             argsWithOverrides = args // {
+                stdenv = stdenv;
+                hdf5 = hdf5;
+                python = python;
+                zlib = zlib;
+                cudatoolkit = cudatoolkit;
+                cudnn = cudnn;
                 openmpi = openmpi.override {
                     cudaSupport = true; 
                     cudatoolkit = cudatoolkit;
