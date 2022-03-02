@@ -63,14 +63,16 @@ let
 # 
 in
     args@{
-        stdenv      ? defaults.stdenv     ,
-        hdf5        ? defaults.hdf5       ,
-        python      ? defaults.python     ,
-        openmpi     ? defaults.openmpi    ,
-        zlib        ? defaults.zlib       ,
-        cudatoolkit ? defaults.cudatoolkit,
-        cudnn       ? defaults.cudnn      ,
-        magma       ? defaults.magma      ,
+        stdenv        ? defaults.stdenv     ,
+        hdf5          ? defaults.hdf5       ,
+        python        ? defaults.python     ,
+        openmpi       ? defaults.openmpi    ,
+        zlib          ? defaults.zlib       ,
+        cudatoolkit   ? defaults.cudatoolkit,
+        cudnn         ? defaults.cudnn      ,
+        magma         ? defaults.magma      ,
+        writeText     ? pinnedNix.writeText,
+        writeTextFile ? pinnedNix.writeTextFile,
         ...
     }:
         let
